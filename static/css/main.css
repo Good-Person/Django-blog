@@ -1,0 +1,288 @@
+body{
+    background-color: #f4f4f4;
+    font-family: "Microsoft YaHei";
+}
+
+.logo{
+    font-size: 30px;
+}
+
+.navbar-inverse .navbar-brand{
+    color: #ffffff;
+}
+.header{
+    width:100%;
+    margin: 0 auto 10px;
+    /*background-color: #000000;*/
+    /*opacity: 0.5;*/
+    position: fixed;
+    top:-70px;
+    opacity:0;
+    transition: all 500ms ease 300ms;
+}
+
+.header-menu {
+    padding: 10px 15px;
+}
+
+.header-content{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+
+}
+.header-content div{
+    opacity:0;
+    position: relative;
+    margin-top: 0;
+    top:50%;
+    transition: all 1000ms ease 300ms;
+}
+
+.header-content span{
+    width: 60px;
+    height: 60px;
+    opacity: 0.9;
+    background: url("../images/arrow.png");
+    background-position: 0 -60px;
+    position: absolute;
+    bottom:40px;
+    left: 50%;
+    margin-left: -30px;
+    transform: scale(0.85);
+    animation: move 1.0s linear 0s infinite;
+}
+
+@keyframes move {
+    from{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    to{
+        transform: translate(0, 30px);
+        opacity: 0;
+    }
+
+}
+
+
+.moving div{
+    opacity:1;
+}
+
+.header-content div h1{
+    margin: 0;
+    padding: 0;
+    font:bold 40px "Microsoft YaHei";
+}
+
+.header-content div h2{
+    margin: 0;
+    padding: 0;
+    font:normal 30px "Microsoft YaHei";
+}
+
+.effect{
+    background-color: #f4f4f4;
+    opacity: 0;
+    width: 100%;
+    height: 666px;
+    position: absolute;
+}
+
+
+.header-image{
+    width: 100%;
+    height:661px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*.header-image img{*/
+    /*width:100%;*/
+    /*height: 100%;*/
+/*}*/
+.header-image{
+    background:url("../images/timg1.jpg") no-repeat;
+    background-size: cover;
+}
+
+.content{
+    margin-top:20px;
+    color: #222222;
+}
+
+.articles{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.picture{
+    margin-top: 15px;
+    height: 160px;
+}
+
+.article{
+    margin-top: 15px;
+    height: 160px;
+    position: relative;
+}
+
+.article .atitle{
+    margin: 0;
+    font:bold 20px 'Microsoft YaHei';
+    line-height: 35px;
+}
+
+.article .ainfo{
+    font-size: 10px;
+    margin: 5px 0px;
+}
+
+.article .acontent{
+    margin: 0;
+    font:normal 15px 'Microsoft YaHei';
+    line-height: 24px;
+    height: 72px;
+    overflow: hidden;
+}
+
+.article .afooter{
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+
+.picture img{
+    height:100%;
+}
+
+.picture div{
+    height: 100%;
+    border-radius:5px;
+    overflow: hidden;
+}
+
+.article-box{
+    margin-bottom: 15px;
+}
+
+.article-box hr{
+    width:80%;
+    height: 2px;
+    background-color: #222222;
+    border: none;
+}
+
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{
+    background-color: #f8f8f8;
+}
+
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.active>a:focus{
+    background-color: #222222;
+}
+
+
+.toTop{
+    width: 732px;
+    height: 732px;
+    background: url("../images/totop.png") no-repeat;
+    border-radius: 50%;
+    background-position: 150px 0;
+    border:1px solid #222222;
+    position: fixed;
+    bottom: -300px;
+    right: -285px;
+    opacity: 0;
+    transition:all ease 300ms;
+    transform:scale(0.09);
+    /*display: none;*/
+}
+
+.toTop:hover{
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(0.1);
+}
+
+
+.left-column{
+    padding: 0 0 0 30px;
+}
+
+.column-info{
+    background-color: #ffffff;
+    border:1px solid #e5e5e5;
+    border-radius: 5px;
+    margin-bottom:30px;
+    overflow: hidden;
+}
+
+.column-header{
+    background-color: #222222;
+    padding-left: 20px;
+    color: #9d9d9d;
+    height: 50px;
+    font-size: 18px;
+    font-weight:bold;
+    line-height: 50px;
+}
+
+.column-info li{
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 20px;
+    border-bottom:1px solid #f4f4f4;
+}
+
+.column-info ul span{
+    height: 20px;
+    width: 40px;
+    margin-top: 5px;
+    line-height: 18px;
+    text-align: center;
+    border:1px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+
+.left-column a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.left-column .tags-box{
+    margin: 10px 20px;
+    line-height: 30px;
+}
+
+@media (max-width: 770px) {
+    .left-column{
+        padding: 0;
+    }
+}
+
+.footer{
+    background-color: #222222;
+    text-align: center;
+    color: #9d9d9d;
+}
+
+.footer div{
+    margin:10px;
+}
+
+.navbar-nav>li>.dropdown-menu{
+    margin-top: 10px;
+}
+
+.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a:focus{
+    background-color: #222222;
+}
+
+.atitle a{
+    color: #222222;
+}

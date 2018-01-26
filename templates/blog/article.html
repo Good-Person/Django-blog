@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/article.css' %}">
+{% endblock %}
+{% load static %}
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/article.js' %}"></script>
+{% endblock %}
+{% block content %}
+	<div id="content" class="container content">
+		<div id="articles" class="articles col-md-9 ">
+			<div class="article-box col-md-12 clearfix">
+				<div class="article-content">
+					<div class="title">{{ article.title }}</div>
+					<div class="title-label">
+						<div class="inner">
+							<span>---- {{ article.create_date }}</span>
+							<span> · {{ article.get_status_display }} ----</span>
+						</div>
+					</div>
+                    {{ article.body }}
+                    </div>
+			</div>
+        {% include 'blog/comment.html' %}
+		</div>
+    {% include 'blog/left-column.html' %}
+	</div>
+{% endblock %}

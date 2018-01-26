@@ -1,0 +1,130 @@
+.header{
+    opacity: 1;
+    top:0;
+}
+
+.content{
+    margin-top:100px;
+    margin-bottom: 50px;
+}
+
+.content .title{
+    margin: 15px 0;
+    text-align: center;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.content .title-label{
+    height: 50px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.title-label .inner{
+    display: inline-block;
+    border: 1px solid;
+    border-left: none;
+    border-right: none;
+}
+
+.content p{
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.tags{
+    padding-right: 0;
+}
+
+.comments .button-comment{
+    margin:15px 0 0;
+    border-top: 1px solid #222222;
+}
+
+.comments textarea{
+    padding: 6px 12px;
+    font-size: 15px;
+    border: 1px solid #222222;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 2px rgba(0,0,0,0.2);
+    margin: 30px 0 10px;
+    width: 100%;
+    height: 200px;
+}
+
+.comments span{
+    font:bold 18px "Microsoft YaHei";
+    line-height: 34px;
+}
+
+.comments .btn-default{
+    color: #fff;
+    background-color: #222222;
+    border-color: #222222;
+}
+
+.article-box hr{
+    width: 100%;
+}
+
+/*.content .comment{*/
+    /*margin: 15px 0;*/
+    /*border: 1px solid rgba(22,22,22,0.6);*/
+/*}*/
+
+/*.comment .comment-header{*/
+    /*margin-top: 15px;*/
+    /*height: 25px;*/
+    /*font-size: 18px;*/
+    /*line-height: 25px;*/
+/*}*/
+
+/*.comment .comment-content{*/
+    /*font: normal 14px "Microsoft YaHei";*/
+    /*background-color: gold;*/
+/*}*/
+
+/*.comment-footer{*/
+    /*padding: 0;*/
+/*}*/
+
+.content .comment{
+    margin: 15px 0;
+    border: 1px solid rgba(22,22,22,0.6);
+}
+
+.comment .comment-header{
+    margin-top: 15px;
+    height: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.comment .comment-content{
+    margin:10px 0 10px 40px;
+}
+
+.comment-content .comment-footer span{
+    font-size: inherit;
+}
+
+.comment-content .reply{
+    border-top:1px dashed rgba(0,0,0,0.75);
+}
+
+.reply .reply-header{
+    height: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.reply .reply-content{
+    margin:10px 0 10px 40px;
+}
+
+.reply-content .reply-footer span{
+    font-size: inherit;
+}
