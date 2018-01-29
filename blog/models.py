@@ -54,6 +54,7 @@ class Article(models.Model):
     img_link = models.CharField(u'图片地址', max_length=255)
     create_date = models.DateTimeField(u'创建时间', auto_now_add=True)
     views = models.IntegerField(u'阅览量', default=0)
+    is_delete = models.BooleanField(default=False)
 
     user = models.ForeignKey('UserProfile', related_name='user')
     category = models.ForeignKey('Category', related_name='category', null=True)
@@ -66,3 +67,6 @@ class Article(models.Model):
     def __unicode__(self):
         return self.title
 
+    def get_comments(self):
+        # return self.objects.filter(belong__replay=None)
+        return self.belong.filter(reply=None)

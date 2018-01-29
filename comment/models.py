@@ -2,14 +2,15 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from blog.models import Article
+from blog.models import Article, UserProfile
 
 class Comment(models.Model):
 
     content = models.TextField(u'评论内容')
     create_date = models.DateTimeField(u'创建时间', auto_now_add=True)
+    user = models.ForeignKey(UserProfile, related_name='user_comment', blank=True, null=True)
     belong = models.ForeignKey(Article, related_name='belong')
-    reply = models.ForeignKey('self', related_name='parent_reply', null=True, default=None)
+    reply = models.ForeignKey('self', related_name='parent_reply', blank=True, null=True)
 
 
     class Meta:

@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+{% endblock %}
+{% block content %}
+
+<div id="login_con" class="login_con clearfix">
+    <div id="login_form" class="login_form">
+        <div class="login_title clearfix">
+            <h1>用户登录</h1>
+            <a href="{% url 'usercenter:register' %}">立即注册</a>
+        </div>
+        <div class="form_input">
+            <form action="{% url 'usercenter:login' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" class="name_input" placeholder="请输入用户名"
+                       value="{{ username }}">
+                <div class="user_error" style="display: block">
+                    {% if login_form.errors.username %}
+                        {{ login_form.errors.username.0 }}
+                    {% endif %}
+                </div>
+                <input type="password" name="password" class="pass_input" placeholder="请输入密码"
+                       value="{{ login_form.password.value }}">
+                <div class="pwd_error" style="display: block">
+                    {% if login_form.errors.password %}
+                        {{ login_form.errors.passwrod.0 }}
+                        {% else %}
+                        {{ err }}
+                    {% endif %}
+                </div>
+                <div class="errs">{{ err }}</div>
+                <div class="more_input clearfix">
+                    <input type="checkbox" name="checkbox" value="1" checked="checked">
+                    <label>记住用户名</label>
+                    <a href="{% url 'usercenter:update_pwd' %}">忘记密码</a>
+                </div>
+                <input type="submit" name="" value="登录" class="input_submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="register_con clearfix" id="register_con">
+    <div class="reg_title clearfix">
+        <h1>用户注册</h1>
+        <a href="{% url 'usercenter:login' %}">登录</a>
+    </div>
+    <div class="reg_form clearfix" id="reg_form">
+
+        <form action="{% url 'usercenter:register' %}" method="post">
+            {% csrf_token %}
+            <ul>
+                <li>
+                    <label>用户名:</label>
+                    <input type="text" name="username" id="user_name">
+                    <span class="error_tip">提示信息</span>
+                </li>
+                <li>
+                    <label>密码:</label>
+                    <input type="password" name="password1" id="pwd">
+                    <span class="error_tip">提示信息</span>
+                </li>
+                <li>
+                    <label>确认密码:</label>
+                    <input type="password" name="password2" id="cpwd">
+                    <span class="error_tip">提示信息</span>
+                </li>
+                <li>
+                    <label>邮箱:</label>
+                    <input type="text" name="email" id="email">
+                    <span class="error_tip">提示信息</span>
+                </li>
+                <li class="reg_sub">
+                    <input type="submit" value="注 册" name="">
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

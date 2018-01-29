@@ -1,10 +1,6 @@
 {% extends 'blog/base.html' %}
 {% load static %}
-{% block css %}
-	<link rel="stylesheet" href="{% static 'css/main.css' %}">
-{#    <link rel="stylesheet" href="/static/css/article.css">#}
-    <link rel="stylesheet" href="{% static 'css/search.css' %}">
-{% endblock %}
+{% load blog_tags %}
 {% block js %}
     <script type="text/javascript" src="{% static 'js/article.js' %}"></script>
 {% endblock %}
@@ -274,7 +270,7 @@
             </div>
         </div>
     </div>
-    {% include 'blog/left-column.html' %}
+    {% get_left_column %}
 </div>
 {% endblock %}
 

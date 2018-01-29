@@ -28,6 +28,8 @@ $(function () {
         });
     });
 
+    $(".header").css({opacity:1, top:0});
+    $(".content").css({marginTop:'100px'});
 
 
 

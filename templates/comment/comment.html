@@ -1,0 +1,24 @@
+<div id="comments" class="comments col-md-12 clearfix">
+    <div class="button-comment clearfix">
+        <textarea name="ccontent" id="ccomment"></textarea>
+        <button id="ccomment_btn" class="btn btn-default btn-md fr">提&nbsp;&nbsp;交</button>
+        <span class="fl">0条评论</span><span class="fl">&nbsp;|&nbsp;</span><span class="fl">0条回复</span>
+    </div>
+    {% for comment in comments %}
+    <div id="comment_{{ comment.id }}" class="comment col-md-12 clearfix">
+        <!--<div class="col-md-12 comment-header">-->
+        <div class="comment-header">
+            <em class="fa fa-user-circle fa-lg"></em>
+            &nbsp;
+            {{ comment.user }}
+        </div>
+        <!--<div id="cc_id" class="col-md-11 col-sm-11 col-xs-11 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 comment-content">-->
+        <div id="cc_{{ comment.id }}" class="comment-content">
+            {{ comment.content }}
+            <div class="comment-footer">
+                <span>创建时间</span>&nbsp;|&nbsp;<span>回复</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

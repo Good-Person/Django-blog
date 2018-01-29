@@ -286,3 +286,57 @@ body{
 .atitle a{
     color: #222222;
 }
+
+
+/*注册页面*/
+.register_con{
+	height:500px;
+    background:url("../images/timg2.jpg");
+}
+
+.reg_title{width:360px;height:50px;margin:0 auto;border-bottom:1px solid #e0e0e0}
+.reg_title h1{height:50px;line-height:50px;float:left;font-size:24px;color:#222222;font-weight:bold;margin: 0;padding-left:20px}
+.reg_title a{float:right;height:20px;line-height:20px;font-size:16px;color:#222222;padding-right:20px;margin-top:15px}
+.reg_title a:hover{text-decoration:none;color: #ffffff;}
+
+.reg_form{width:360px;margin:20px auto;position:relative;}
+.reg_form li{height:70px;}
+.reg_form li label{width:70px;height:40px;line-height:40px;float:left;font-size:14px;color:#222222}
+.reg_form li input{width:288px;height:38px;border:1px solid #e0e0e0;float:left;outline:none;text-indent:10px;background-color:#f8f8f8}
+.reg_form li.agreement input{width:15px;height:15px;float:left;margin-top:13px}
+.reg_form li.agreement label{width:300px;float:left;margin-left:10px;}
+.reg_form li.reg_sub input{width:360px;height:40px;background-color:#222222;font-size:18px;color:#fff;font-family:'Microsoft Yahei';cursor:pointer;}
+.reg_form li .error_tip{height:30px;line-height:30px;color:#e62e2e;display:none;}
+.reg_form li .error_tip2{height:20px;line-height:20px;color:#e62e2e;display:none;}
+
+
+/*登入页面*/
+
+.login_con{
+	height:500px;
+    background:url("../images/timg2.jpg");
+}
+.login_form{width:368px;height:378px; margin:0 auto;}
+
+.login_title{height:60px;width:308px;margin:10px auto;border-bottom:1px solid #e0e0e0;}
+
+.login_title h1{font-size:24px;height:60px;line-height:60px;color: #222222;float:left;font-weight:bold;margin:0 0 0 44px;}
+.login_title a{width:100px;height:20px;display:block;font-size:16px;color:#222222;text-indent:26px;float:left;margin:20px 0 0 36px}
+.login_title a:hover{text-decoration:none;color: #ffffff;}
+
+.form_input{width:308px;height:250px;margin:20px auto;position:relative;}
+.name_input,.pass_input{width:306px;height:36px;border:1px solid #e0e0e0;background:url(../images/icons02.png) 280px -41px no-repeat #f8f8f8;outline:none;font-size:14px;text-indent:10px;position: absolute;left:0;top:0}
+.pass_input{top:65px;background-position:280px -95px;}
+
+.user_error,.pwd_error{color:#f00;position:absolute;left:0;top:43px;display:none}
+
+.pwd_error{top:110px;}
+
+.more_input{position:absolute;left:0;top:130px;width:100%}
+
+.more_input input{float:left;margin-top:5px;}
+.more_input label{float:left;margin-left:10px;}
+.more_input a{float:right;color:#222222;}
+.more_input a:hover{color:#ffffff;text-decoration:none;}
+
+.input_submit{width:100%;height:40px;position:absolute;left:0;top:180px;background-color:#222222;color:#fff;font-size:20px;border:0px;font-family:'Microsoft Yahei';cursor:pointer;}

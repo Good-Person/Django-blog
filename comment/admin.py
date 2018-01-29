@@ -7,4 +7,4 @@ from models import *
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('belong', 'reply', 'create_date')
+    list_display = ('user', 'belong', 'reply', 'create_date')

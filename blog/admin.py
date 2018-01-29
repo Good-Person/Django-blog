@@ -22,4 +22,4 @@ class ArticleAdmin(admin.ModelAdmin):
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('id', 'username', 'gender', 'email')
+    list_display = ('id', 'username', 'gender', 'email', 'password')

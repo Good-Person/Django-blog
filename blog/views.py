@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, reverse
 from django.views import View
-from models import Article as Articles
+from models import Article as Articles, UserProfile
 
 
 class Index(View):

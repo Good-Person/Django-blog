@@ -1,10 +1,11 @@
 {% extends 'blog/base.html' %}
 {% load static %}
+{% load blog_tags %}
+{% load comment_tags %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 	<link rel="stylesheet" href="{% static 'css/article.css' %}">
 {% endblock %}
-{% load static %}
 {% block js %}
     <script type="text/javascript" src="{% static 'js/article.js' %}"></script>
 {% endblock %}
@@ -23,8 +24,8 @@
                     {{ article.body }}
                     </div>
 			</div>
-        {% include 'blog/comment.html' %}
+        {% get_comments article %}
 		</div>
-    {% include 'blog/left-column.html' %}
+		{% get_left_column %}
 	</div>
 {% endblock %}
