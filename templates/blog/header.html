@@ -18,26 +18,26 @@
                     <li><a href="#">链接</a></li>
                     <li><a href="#">关于</a></li>
                 </ul>
-                <!-- <button class="btn btn-default navbar-btn">按钮</button> -->
-
-{#                <ul class="nav navbar-nav navbar-right">#}
-{#                    <li><a href="#">登录</a></li>#}
-{#                    <li><a href="#">注册</a></li>#}
-{#                </ul>#}
-
+{#                <button class="btn btn-default navbar-btn">按钮</button>#}
+                {% if user.is_authenticated %}
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown">
-                            <i class="fa fa-user-o fa-lg"></i>&nbsp;辉哥哥
+                            <i class="fa fa-user-o fa-lg"></i>&nbsp;{{ user.username }}
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">个人信息</a></li>
-                            <li><a href="#">退出</a></li>
+                            <li><a href="{% url 'usercenter:logout' %}?next={{ request.path }}">退出</a></li>
                         </ul>
                     </li>
                 </ul>
-
+                {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'usercenter:login' %}?next={{ request.path }}">登录</a></li>
+                    <li><a href="{% url 'usercenter:register' %}?next={{ request.path }}">注册</a></li>
+                </ul>
+                {% endif %}
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
                         <div class="input-group">

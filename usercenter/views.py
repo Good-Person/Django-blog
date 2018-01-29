@@ -16,7 +16,8 @@ from blog.models import UserProfile
 
 class Register(View):
     def get(self, request):
-        return render(request, "usercenter/register.html")
+        path = request.GET.get('next')
+        return render(request, "usercenter/register.html", locals())
 
     def post(self, request):
         register_form = RegisterForm(request.POST)
@@ -34,22 +35,30 @@ class Register(View):
                 user.gender = 0
                 user.save()
                 login(request, user)
-                return redirect(reverse("blog:index"))
+                path = request.GET.get('next')
+                if path == 'None':
+                    return redirect(reverse("blog:index"))
+                return redirect(path)
         else:
             return render(request, "usercenter/register.html", locals())
 
 
 class Login(View):
     def get(self, request):
-        return render(request, "usercenter/login.html")
+        path = request.GET.get('next')
+        return render(request, "usercenter/login.html", locals())
 
     def post(self, request):
         login_form = LoginForm(request.POST)
+        path = request.GET.get('next')
+        print path
         if login_form.is_valid():
             user = authenticate(**login_form.cleaned_data)
             if user:
                 login(request, user)
-                return redirect(reverse("blog:index"))
+                if path == 'None':
+                    return redirect(reverse("blog:index"))
+                return redirect(path)
             else:
                 err = u"用户名或密码错误"
                 return render(request, "usercenter/login.html", locals())
@@ -64,3 +73,9 @@ class CheckUsername(View):
 
 class UpdatePwd(View):
     pass
+
+class Logout(View):
+    def get(self, request):
+        path = request.GET.get('next')
+        logout(request)
+        return redirect(path)
