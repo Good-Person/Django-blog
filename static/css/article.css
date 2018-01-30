@@ -110,6 +110,16 @@
     font-size: inherit;
 }
 
+.comment-content .comment-footer a{
+    font-weight: bold;
+    color: #222222;
+}
+
+.comment-content .comment-footer a:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .comment-content .reply{
     border-top:1px dashed rgba(0,0,0,0.75);
 }
@@ -125,6 +135,29 @@
     margin:10px 0 10px 40px;
 }
 
+
 .reply-content .reply-footer span{
     font-size: inherit;
+}
+
+.reply-content .reply-footer a{
+    font-weight: bold;
+    color: #222222;
+}
+
+.reply-content .reply-footer a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.comments .comment textarea{
+    margin-top: 10px;
+}
+
+.comments .comment button{
+    margin-bottom: 10px;
+}
+
+.ajax-post{
+    display: none;
 }

@@ -19,3 +19,12 @@ class Comment(models.Model):
 
     def __unicode__(self):
         return self.content[0:10]
+
+    def add_comment(self, content, belong, parent=None, user=None):
+        self.content = content
+        self.belong = belong
+        self.reply = parent
+        self.user = user
+        self.save()
+        return self
+

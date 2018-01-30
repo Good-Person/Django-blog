@@ -1,0 +1,14 @@
+{% load humanize %}
+<div class="reply">
+    <div class="reply-header">
+        <em class="glyphicon glyphicon-user"></em>
+        &nbsp;&nbsp;
+        {{ reply.user }}
+    </div>
+    <div id="{{ reply.id }}" class="reply-content">
+        {{ reply.content }}
+        <div class="reply-footer">
+            <em>{{ reply.create_date|naturaltime }}</em>&nbsp;|&nbsp;<a class="reply-btn">回复</a>
+        </div>
+    </div>
+</div>

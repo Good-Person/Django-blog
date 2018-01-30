@@ -51,7 +51,6 @@ class Login(View):
     def post(self, request):
         login_form = LoginForm(request.POST)
         path = request.GET.get('next')
-        print path
         if login_form.is_valid():
             user = authenticate(**login_form.cleaned_data)
             if user:

@@ -70,3 +70,9 @@ class Article(models.Model):
     def get_comments(self):
         # return self.objects.filter(belong__replay=None)
         return self.belong.filter(reply=None)
+
+    def get_comment_num(self):
+        return self.belong.filter(reply=None).count()
+
+    def get_reply_num(self):
+        return self.belong.filter().exclude(reply=None).count()

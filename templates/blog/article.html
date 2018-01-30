@@ -24,8 +24,13 @@
                     {{ article.body }}
                     </div>
 			</div>
-        {% get_comments article %}
+        	{% get_comments article %}
 		</div>
 		{% get_left_column %}
+        {#    用于ajax post 提交数据    #}
+        <div class="ajax-post">
+            {% csrf_token %}
+            <span>{{ article.id }}</span>
+        </div>
 	</div>
 {% endblock %}
