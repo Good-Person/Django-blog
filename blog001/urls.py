@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^comment/', include('comment.urls', namespace='comment')),
     url(r'usercenter/', include('usercenter.urls', namespace='usercenter')),
+    url(r'^search/', include('haystack.urls')),
 ]

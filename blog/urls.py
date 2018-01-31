@@ -6,5 +6,4 @@ from . import views
 urlpatterns = [
     url(r'^index/$', views.Index.as_view(), name='index'),
     url(r'^article/(?P<aid>\d+)$', views.Article.as_view(), name='article'),
-    url(r'^search/$', views.Search.as_view(), name='search'),
 ]

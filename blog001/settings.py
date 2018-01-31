@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for blog001 project.
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'blog',
     'comment',
     'usercenter',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,14 @@ STATICFILES_DIRS = [
 ]
 
 AUTH_USER_MODEL = "blog.UserProfile"
+
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+            'ENGINE': 'utils.whoosh_zh_backend.WhooshEngine',
+            'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+        },
+}
+
+# 自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

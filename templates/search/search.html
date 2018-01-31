@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+{% load blog_tags %}
+{% load static %}
+{% load humanize %}
+{% load highlight %}
+
+
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="content" class="container content">
+    <div id="articles" class="articles col-md-9 col-sm-8 col-xs-12">
+        <div class="article-box clearfix">
+            {% for result in page.object_list %}
+            <div class="article col-md-8 col-sm-12 col-xs-12">
+                <div class="atitle"><a href="{% url 'blog:article' result.object.id %}">{% highlight result.object.title with query %}</a></div>
+                <div class="ainfo clearfix">
+                    <ul>
+                        <li class="fl"><span class="fa fa-user"></span>&nbsp;{{ result.object.user }}&nbsp;&nbsp;</li>
+                        <li class="fl"><span class="fa fa-calendar"></span>&nbsp;{{ result.object.create_date|naturaltime }}&nbsp;&nbsp;</li>
+                    </ul>
+                </div>
+                <div class="acontent">{{ result.object.body }}</div>
+                <div class="afooter">
+                    <ul>
+                        <li class="fl"><span class="fa fa-list-ul"></span>&nbsp;{{ result.object.category }}&nbsp;&nbsp;</li>
+                        <li class="fl"><span class="fa fa-eye"></span>&nbsp;{{ result.object.views }}&nbsp;&nbsp;</li>
+                        <li class="fl"><span class="fa fa-comments"></span>&nbsp;{{ result.object.get_comment_number }}&nbsp;&nbsp;</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="picture col-md-4 hidden-sm hidden-xs">
+                <div>
+                <img src="{% static 'images/picture.jpg' %}" alt="配图" class="img-responsive center-block">
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <hr>
+            </div>
+            {% empty %}
+                <p>啥也没找到</p>
+            {% endfor %}
+        </div>
+    {% if page.has_previous or page.has_next %}
+        <div>
+            {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; 上一页{% if page.has_previous %}</a>{% endif %}
+        |
+            {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}下一页 &raquo;{% if page.has_next %}</a>{% endif %}
+        </div>
+    {% endif %}
+    </div>
+{% get_left_column %}
+</div>
+{% endblock %}
+

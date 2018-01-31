@@ -38,10 +38,10 @@
                     <li><a href="{% url 'usercenter:register' %}?next={{ request.path }}">注册</a></li>
                 </ul>
                 {% endif %}
-                <form class="navbar-form navbar-right">
+                <form class="navbar-form navbar-right" action="/search/" method="get" target="_blank">
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" name="search" class="form-control">
+                            <input type="text" name="q" class="form-control">
                             <span class="input-group-btn">
                                 <button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                             </span>

@@ -276,6 +276,10 @@ body{
     margin:10px;
 }
 
+.footer a{
+    color: #9d9d9d;
+}
+
 .navbar-nav>li>.dropdown-menu{
     margin-top: 10px;
 }

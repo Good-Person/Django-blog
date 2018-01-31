@@ -5,7 +5,7 @@
         <textarea name="content"></textarea>
         <button class="btn btn-default btn-md fr">提&nbsp;&nbsp;交</button>
     </div>
-    <div class="clearfix" style="position: absolute;top:260px;">
+    <div class="clearfix">
         <span class="fl">{{ article.get_comment_num  }}条评论</span><span class="fl">&nbsp;|&nbsp;</span><span class="fl">{{ article.get_reply_num  }}条回复</span>
     </div>
     {% for comment in comments %}

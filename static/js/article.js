@@ -102,4 +102,11 @@ $(function () {
         });
 
     });
+
+
+    // 来个一次函数控制评论框高
+    var slope = (1400-375)/(200-80);
+	var $ww = $(window).width();
+    theight = ($ww-33)/slope;
+    $('.comments textarea').height(theight);
 });

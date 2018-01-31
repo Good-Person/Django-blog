@@ -23,9 +23,4 @@ class  Article(View):
         return render(request, 'blog/article.html', locals())
 
 
-class Search(View):
-    def get(self, request):
-        title = '搜索页面'
-        return render(request, 'blog/search.html', locals())
-
 

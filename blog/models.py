@@ -68,8 +68,10 @@ class Article(models.Model):
         return self.title
 
     def get_comments(self):
-        # return self.objects.filter(belong__replay=None)
         return self.belong.filter(reply=None)
+
+    def get_comment_number(self):
+        return self.belong.all().count()
 
     def get_comment_num(self):
         return self.belong.filter(reply=None).count()

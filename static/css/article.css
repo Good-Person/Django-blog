@@ -122,6 +122,7 @@
 
 .comment-content .reply{
     border-top:1px dashed rgba(0,0,0,0.75);
+    padding-top: 5px;
 }
 
 .reply .reply-header{
