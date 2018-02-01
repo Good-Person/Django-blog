@@ -38,7 +38,7 @@ class Category(models.Model):
         return self.name
 
     def get_article_num(self):
-        return self.category.count()
+        return self.category.filter(is_delete=False).count()
 
 
 class Article(models.Model):

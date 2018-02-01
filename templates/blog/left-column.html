@@ -3,7 +3,7 @@
         <div class="column-header"><span class="fa fa-list fa-lg"></span>&nbsp&nbsp分&nbsp类</div>
         <ul>
             {% for category in categories %}
-            <li><a href="#">{{ category.name }}</a><span class="fr">{{ category.get_article_num }}</span></li>
+            <li><a href="{% url 'blog:carticle' category.name %}">{{ category.name }}</a><span class="fr">{{ category.get_article_num }}</span></li>
             {% endfor %}
         </ul>
     </div>
@@ -12,7 +12,7 @@
         <div class="column-header"><span class="fa fa-tags fa-lg"></span>&nbsp&nbsp标&nbsp签</div>
         <div class="tags-box">
             {% for tag in tags %}
-            <a href="#" class="btn btn-default btn-xs">{{ tag }}</a>
+            <a href="{% url 'blog:tarticle' tag.name %}" class="btn btn-default btn-xs">{{ tag }}</a>
             {% endfor %}
         </div>
     </div>

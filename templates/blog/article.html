@@ -21,7 +21,7 @@
 							<span> · {{ article.get_status_display }} ----</span>
 						</div>
 					</div>
-                    {{ article.body }}
+                    {{ article.body|safe }}
                     </div>
 			</div>
         	{% get_comments article %}

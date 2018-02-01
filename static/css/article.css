@@ -1,3 +1,7 @@
+html{
+    font-size: 14px;
+}
+
 .header{
     opacity: 1;
     top:0;
@@ -67,6 +71,62 @@
 .article-box hr{
     width: 100%;
 }
+.article-content{
+    line-height: 1.6;
+}
+.article-content img{
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.article-content ul li p{
+    font-size: 1rem;
+}
+
+.article-content h1{
+    font-size: 2rem;
+    padding-left: 0.5em;
+    border-left: 0.5em solid #222222;
+}
+
+.article-content h2{
+    font-size: 1.8rem;
+}
+
+.article-content h3{
+    font-size: 1.6rem;
+}
+
+.article-content h4{
+    font-size: 1.4rem;
+}
+
+.article-content h5{
+    font-size: 1.2rem;
+}
+
+.article-content h6 a{
+    font-size: 1rem;
+}
+
+.article-content ul{
+    font-size: 1rem;
+    list-style: disc;
+}
+
+.article-content li{
+    margin-left: 2em;
+    font-size: 1rem;
+}
+
+
+
+
+@media screen and (min-width:321px) and (max-width:414px){html{font-size:14px}}
+@media screen and (min-width:415px) and (max-width:719px){html{font-size:14.5px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:15px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:15.5px}}
+@media screen and (min-width:800px){html{font-size:16px}}
 
 /*.content .comment{*/
     /*margin: 15px 0;*/
@@ -162,3 +222,4 @@
 .ajax-post{
     display: none;
 }
+

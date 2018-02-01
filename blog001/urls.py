@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from blog import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -22,4 +23,5 @@ urlpatterns = [
     url(r'^comment/', include('comment.urls', namespace='comment')),
     url(r'usercenter/', include('usercenter.urls', namespace='usercenter')),
     url(r'^search/', include('haystack.urls')),
+    url(r'^$', views.Index.as_view()),
 ]

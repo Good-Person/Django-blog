@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.SuitConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,7 +87,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': 3306,
         'USER': 'huige',
-        'PASSWORD': '123456',
+        'PASSWORD': 'huige123,./',
     }
 }
 
@@ -146,3 +147,5 @@ HAYSTACK_CONNECTIONS = {
 
 # 自动生成索引
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+STATIC_ROOT = '/var/www/myblog/static/'
