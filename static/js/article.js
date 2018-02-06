@@ -47,61 +47,66 @@ $(function () {
                 $(pid).append(content);
 
             });
-
-
-            // 回复按钮
-            var $replySwitch = false;
-            $('.reply-btn').on("click", function () {
-                if ($replySwitch){
-                    $(this).html('回复').parent().children('textarea').remove();
-                    $(this).parent().children('button').remove();
-                    $replySwitch = false;
-                }
-                else {
-                    content = $('.button-comment').html();
-                    $(this).html('取消').parent().append(content);
-                    $replySwitch = true;
-                }
-
-
-
-                $("#comments button").on("click", function () {
-                var content = $(this).parent().children('textarea').val();
-                    pid = $(this).parent().parent().attr('id');
-
-                    $.ajax({
-                        type:'post',
-                        url:"/comment/addreply/",
-                        data:{'csrfmiddlewaretoken':csrf,'aid':aid,'content':content,'parent':pid},
-                        dataType:'json',
-                        success:function(){
-                            window.location.reload();
-                        }
-                    });
-
-                });
-
-            });
-
         }
     });
 
 
-    // 评论提交
 
-    $("#comments button").on("click", function () {
+
+    // 提交按钮
+    $("#comments").delegate("button", "click", function () {
         var content = $(this).parent().children('textarea').val();
-        $.ajax({
-            type:'post',
-            url:"/comment/add/",
-            data:{'csrfmiddlewaretoken':csrf,'aid':aid,'content':content},
-            dataType:'json',
-            success:function(){
-                window.location.reload();
-            }
-        });
+        var pid = $(this).parent().parent().attr('id');
+
+        if (content.length==0){
+            alert('内容不能为空、、、');
+            return
+        }
+
+        if (pid == 'comments'){
+
+            $.ajax({
+                type:'post',
+                url:"/comment/add/",
+                data:{'csrfmiddlewaretoken':csrf,'aid':aid,'content':content},
+                dataType:'json',
+                success:function(){
+                    window.location.reload();
+                }
+            });
+        }
+        else {
+            $.ajax({
+                type:'post',
+                url:"/comment/addreply/",
+                data:{'csrfmiddlewaretoken':csrf,'aid':aid,'content':content,'parent':pid},
+                dataType:'json',
+                success:function(){
+                    window.location.reload();
+                }
+            });
+        }
+
 
     });
+
+
+
+    // 回复按钮
+    var $replySwitch = false;
+    $('.comment-content').delegate("a","click", function () {
+        if ($replySwitch){
+            $(this).html('回复').parent().children('textarea').remove();
+            $(this).parent().children('button').remove();
+            $replySwitch = false;
+        }
+        else {
+            content = $('.button-comment').html();
+            $(this).html('取消').parent().append(content);
+            $replySwitch = true;
+        }
+    });
+
 
 
     // 来个一次函数控制评论框高

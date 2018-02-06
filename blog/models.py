@@ -26,6 +26,9 @@ class Tag(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_article_num(self):
+        return self.tags.filter(is_delete=False).count()
+
 
 class Category(models.Model):
     name = models.CharField(u'分类', max_length=30)

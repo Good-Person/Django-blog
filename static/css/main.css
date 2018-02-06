@@ -114,6 +114,11 @@ body{
     color: #222222;
 }
 
+.content a:hover{
+    color: #00c1d3;
+    text-decoration: none;
+}
+
 .articles{
     background-color: #ffffff;
     border-radius: 10px;
@@ -135,6 +140,11 @@ body{
     margin: 0;
     font:bold 20px 'Microsoft YaHei';
     line-height: 35px;
+    transition: all 500ms cubic-bezier(.26,.69,.8,1.53);
+}
+
+.article .atitle:hover{
+    padding-left: 1em;
 }
 
 .article .ainfo{
@@ -157,15 +167,21 @@ body{
     left: 15px;
 }
 
-.picture img{
-    height:100%;
-    width: 100%;
-}
-
 .picture div{
     height: 100%;
     border-radius:5px;
     overflow: hidden;
+    transition:all 1s cubic-bezier(.44,-0.71,.64,1.82);
+}
+
+.picture div:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.picture img{
+    height:100%;
+    width: 100%;
 }
 
 .article-box{

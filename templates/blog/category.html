@@ -19,7 +19,7 @@
                         <li class="fl"><span class="fa fa-calendar"></span>&nbsp;{{ article.create_date|naturaltime }}&nbsp;&nbsp;</li>
                     </ul>
                 </div>
-                <div class="acontent">{{ article.body }}</div>
+                <div class="acontent">{{ article.summary }}</div>
                 <div class="afooter">
                     <ul>
                         <li class="fl"><span class="fa fa-list-ul"></span>&nbsp;{{ article.category }}&nbsp;&nbsp;</li>
@@ -30,7 +30,7 @@
             </div>
             <div class="picture col-md-4 hidden-sm hidden-xs">
                 <div>
-                <img src="{% static 'images/picture.jpg' %}" alt="配图" class="img-responsive center-block">
+                    <img src="{{ article.img_link }}" alt="配图" class="img-responsive center-block">
                 </div>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">

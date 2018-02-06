@@ -87,7 +87,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': 3306,
         'USER': 'huige',
-        'PASSWORD': 'huige123,./',
+        'PASSWORD': '123456',
     }
 }
 
@@ -149,3 +149,15 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 STATIC_ROOT = '/var/www/myblog/static/'
+
+
+CACHES = {
+   "default": {
+       "BACKEND": "django_redis.cache.RedisCache",
+       "LOCATION": "redis://127.0.0.1:6379",
+       "OPTIONS": {
+           "CLIENT_CLASS": "django_redis.client.DefaultClient",
+       }
+   }
+
+}

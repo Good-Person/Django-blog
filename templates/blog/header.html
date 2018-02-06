@@ -22,7 +22,7 @@
                 {% if user.is_authenticated %}
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown">
+                        <a href="" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown" title="欢迎{{ user.username }}登入">
                             <i class="fa fa-user-o fa-lg"></i>&nbsp;{{ user.username }}
                             <span class="caret"></span>
                         </a>

@@ -67,7 +67,9 @@ $(function () {
     });
 
 
-
+    $(".article .atitle").click(function () {
+        $(this).children().click();
+    });
 
 
 

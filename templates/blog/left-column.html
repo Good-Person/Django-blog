@@ -12,7 +12,7 @@
         <div class="column-header"><span class="fa fa-tags fa-lg"></span>&nbsp&nbsp标&nbsp签</div>
         <div class="tags-box">
             {% for tag in tags %}
-            <a href="{% url 'blog:tarticle' tag.name %}" class="btn btn-default btn-xs">{{ tag }}</a>
+            <a href="{% url 'blog:tarticle' tag.name %}" class="btn btn-default btn-xs" title="{{ tag }}标签下有{{ tag.get_article_num }}篇文章">{{ tag }}</a>
             {% endfor %}
         </div>
     </div>

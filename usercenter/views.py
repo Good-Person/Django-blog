@@ -16,6 +16,7 @@ from blog.models import UserProfile
 
 class Register(View):
     def get(self, request):
+        title = '注册页面'
         path = request.GET.get('next')
         return render(request, "usercenter/register.html", locals())
 
@@ -46,6 +47,7 @@ class Register(View):
 class Login(View):
     def get(self, request):
         path = request.GET.get('next')
+        title = '登入页面'
         return render(request, "usercenter/login.html", locals())
 
     def post(self, request):

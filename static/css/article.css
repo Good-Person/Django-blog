@@ -15,8 +15,9 @@ html{
 .content .title{
     margin: 15px 0;
     text-align: center;
-    font-size: 35px;
-    line-height: 40px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
 }
 
 .content .title-label{
@@ -74,6 +75,10 @@ html{
 .article-content{
     line-height: 1.6;
 }
+
+.article-content pre{
+    margin-top:10px;
+}
 .article-content img{
     width: 100%;
     margin: 0.5rem 0;
@@ -83,26 +88,31 @@ html{
     font-size: 1rem;
 }
 
+
+.article-content h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
 .article-content h1{
-    font-size: 2rem;
-    padding-left: 0.5em;
-    border-left: 0.5em solid #222222;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    border-bottom:1px solid;
 }
 
 .article-content h2{
-    font-size: 1.8rem;
-}
-
-.article-content h3{
-    font-size: 1.6rem;
-}
-
-.article-content h4{
     font-size: 1.4rem;
 }
 
-.article-content h5{
+.article-content h3{
+    font-size: 1.3rem;
+}
+
+.article-content h4{
     font-size: 1.2rem;
+}
+
+.article-content h5{
+    font-size: 1.1rem;
 }
 
 .article-content h6 a{
@@ -151,7 +161,8 @@ html{
 
 .content .comment{
     margin: 15px 0;
-    border: 1px solid rgba(22,22,22,0.6);
+    border: 1px rgba(22,22,22,0.6);
+    border-style: dashed none;
 }
 
 .comment .comment-header{

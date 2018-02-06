@@ -36,7 +36,7 @@
             </div>
             <div class="picture col-md-4 hidden-sm hidden-xs">
                 <div>
-                <img src="{{ article.img_link }}" alt="配图" class="img-responsive center-block">
+                <a href="{% url 'blog:article' article.id %}"><img src="{{ article.img_link }}" alt="配图" class="img-responsive center-block"></a>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">
