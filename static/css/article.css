@@ -73,6 +73,7 @@ html{
     width: 100%;
 }
 .article-content{
+    margin-top:15px;
     line-height: 1.6;
 }
 
@@ -161,8 +162,7 @@ html{
 
 .content .comment{
     margin: 15px 0;
-    border: 1px rgba(22,22,22,0.6);
-    border-style: dashed none;
+    border-top: 1px dashed rgba(22,22,22,0.6);
 }
 
 .comment .comment-header{

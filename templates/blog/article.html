@@ -13,12 +13,12 @@
 	<div id="content" class="container content">
 		<div id="articles" class="articles col-md-9 ">
 			<div class="article-box col-md-12 clearfix">
-				<div class="article-content">
-					<div class="title">{{ article.title }}</div>
+				<div class="article-content clearfix">
+					<div class="title clearfix">{{ article.title }}</div>
 					<div class="title-label">
 						<div class="inner">
-							<span>---- {{ article.create_date }}</span>
-							<span> · {{ article.get_status_display }} ----</span>
+							<span>---- {{ article.create_date|date:"Y年m月d日" }}</span>
+							<span> ● {{ article.get_status_display }} ----</span>
 						</div>
 					</div>
                     {{ article.body|safe }}
