@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^comment/', include('comment.urls', namespace='comment')),
     url(r'usercenter/', include('usercenter.urls', namespace='usercenter')),
     url(r'^search/', include('haystack.urls')),
-    url(r'^$', cache_page(3600)(views.Index.as_view())),
+    url(r'^$', views.Index.as_view()),
 ]

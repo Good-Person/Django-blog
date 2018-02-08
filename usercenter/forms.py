@@ -6,7 +6,7 @@ class RegisterForm(forms.Form):
                                 min_length=3,
                                 max_length=20)
      password1 = forms.CharField(required=True,
-                                 min_length=8,
+                                 min_length=6,
                                  max_length=20)
      password2 = forms.CharField(required=True,
                                  min_length=8,
@@ -27,4 +27,4 @@ class RegisterForm(forms.Form):
 
 class LoginForm(forms.Form):
     username = forms.CharField(min_length=3, max_length=20, required=True)
-    password = forms.CharField(min_length=8, max_length=20, required=True)
+    password = forms.CharField(min_length=6, max_length=20, required=True)

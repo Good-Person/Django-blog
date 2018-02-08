@@ -2,7 +2,9 @@
 {% load static %}
 {% load humanize %}
 {% load blog_tags %}
+{% load cache %}
 {% block content %}
+    {% cache 3600 index %}
 <div id="header-image" class="header-image">
     <div id="header-content" class="header-content">
         <div>
@@ -47,4 +49,5 @@
     </div>
 {% get_left_column %}
 </div>
+    {% endcache %}
 {% endblock %}

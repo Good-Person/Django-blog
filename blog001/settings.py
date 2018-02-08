@@ -161,3 +161,12 @@ CACHES = {
    }
 
 }
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'goodpersonblog@163.com'
+EMAIL_HOST_PASSWORD = 'goodperson123'
+EMAIL_FROM = 'Good-Person <goodpersonblog@163.com>'

@@ -5,9 +5,11 @@ from django.shortcuts import render, reverse, redirect
 from django.views import View
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.core.mail import send_mail
 
 from models import *
 from blog.models import Article
+from django.conf import settings
 
 
 
@@ -40,6 +42,12 @@ class AddComment(View):
             user = request.user
         comment = Comment()
         comment.add_comment(content, belong, user=user)
+
+        # 添加完评论发送邮件提醒我。
+        email_title = u'博客有新评论'
+        url = 'http://huigege.xin/blog/article/%d'% belong.id
+        email_content = u'{}的文章下有新的评论<a href="{}">查看博客</a>'.format(belong.title, url)
+        send_mail(email_title, '', settings.EMAIL_FROM, ["775470092@qq.com",], fail_silently=True, html_message=email_content)
         return JsonResponse(data)
 
 class AddReply(View):
