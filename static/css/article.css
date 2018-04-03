@@ -33,11 +33,6 @@ html{
     border-right: none;
 }
 
-.content p{
-    font-size: 18px;
-    line-height: 24px;
-}
-
 .tags{
     padding-right: 0;
 }
@@ -48,6 +43,7 @@ html{
 }
 
 .comments textarea{
+    overflow-y:hidden;
     padding: 6px 12px;
     font-size: 15px;
     border: 1px solid #222222;
@@ -116,7 +112,13 @@ html{
     font-size: 1.1rem;
 }
 
-.article-content h6 a{
+.article-content h6{
+    font-size: 1rem;
+}
+.article-content a{
+    font-size: 1rem;
+}
+.article-content p{
     font-size: 1rem;
 }
 
@@ -130,8 +132,9 @@ html{
     font-size: 1rem;
 }
 
-
-
+.article-content a:hover{
+    color:#222222;
+}
 
 @media screen and (min-width:321px) and (max-width:414px){html{font-size:14px}}
 @media screen and (min-width:415px) and (max-width:719px){html{font-size:14.5px}}

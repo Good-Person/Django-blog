@@ -4,7 +4,6 @@
 {% load blog_tags %}
 {% load cache %}
 {% block content %}
-    {% cache 3600 index %}
 <div id="header-image" class="header-image">
     <div id="header-content" class="header-content">
         <div>
@@ -47,7 +46,8 @@
             {% endfor %}
         </div>
     </div>
+    {% cache 3600 index %}
 {% get_left_column %}
-</div>
     {% endcache %}
+</div>
 {% endblock %}

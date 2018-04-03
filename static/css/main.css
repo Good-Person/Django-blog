@@ -137,9 +137,11 @@ body{
 }
 
 .article .atitle{
+    height: 35px;
     margin: 0;
     font:bold 20px 'Microsoft YaHei';
     line-height: 35px;
+    overflow: hidden;
     transition: all 500ms cubic-bezier(.26,.69,.8,1.53);
 }
 

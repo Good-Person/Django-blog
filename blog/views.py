@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
 from django.views import View
 from models import Article as Articles, UserProfile, Category
 from django.conf import settings
@@ -45,6 +45,8 @@ class Test(View):
         # email_title = u'评论回复提醒'
         # content = u'您有新的回复，请注意查收。'
         # send_mail(email_title, content, settings.EMAIL_FROM, ["775470092@qq.com",], fail_silently=True)
+        # path = '/static/test.xlsx'
+        # return redirect(path)
         mag = request.user.is_superuser
         cache.clear()
         return HttpResponse(mag)
