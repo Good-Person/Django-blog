@@ -22,6 +22,8 @@ class  Article(View):
     def get(self, request, aid):
         title = '辉哥哥的文章'
         article = Articles.objects.filter(pk=aid).first()
+        if article.is_delete:
+            return redirect('/')
         if not request.user.is_superuser:
             article.views+=1
         article.save()
