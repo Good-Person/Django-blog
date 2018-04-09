@@ -19,7 +19,7 @@
         <div class="article-box clearfix">
             {% for article in articles %}
             <div class="article col-md-8 col-sm-12 col-xs-12">
-                <div class="atitle"><a href="{% url 'blog:article' article.id %}">{{ article.title }}</a></div>
+                <div class="atitle"><a href="{% url 'blog:article' %}?aid={{ article.id }}">{{ article.title }}</a></div>
                 <div class="ainfo clearfix">
                     <ul>
                         <li class="fl"><span class="fa fa-user"></span>&nbsp;{{ article.user }}&nbsp;&nbsp;</li>
@@ -37,7 +37,7 @@
             </div>
             <div class="picture col-md-4 hidden-sm hidden-xs">
                 <div>
-                <a href="{% url 'blog:article' article.id %}"><img src="{{ article.img_link }}" alt="配图" class="img-responsive center-block"></a>
+                <a href="{% url 'blog:article' %}?aid={{ article.id }}"><img src="{{ article.img_link }}" alt="配图" class="img-responsive center-block"></a>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">

@@ -237,3 +237,11 @@ html{
     display: none;
 }
 
+.article-content table {width:95%;background:#ccc; margin: 10px auto;border-collapse:collapse;}
+.article-content th,.article-content td {height:25px;line-height:25px;text-indent:1rem;border:1px solid #ccc;}
+.article-content th {font-weight:bold;border-bottom:2px solid #ccc;background:#fff;}
+.article-content tr {background:#fff;}
+.article-content tr:nth-child(2n) {background:#f4f4f4;}
+.article-content td a {color:#06f;text-decoration:none;}
+.article-content td a:hover {color:#06f;text-decoration:underline;} )
+

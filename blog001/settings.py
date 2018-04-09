@@ -25,6 +25,7 @@ SECRET_KEY = 'j*957lol15s8lg00h6dh*lakjnwp$l9er%qy%na#j66%51wo)('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -166,7 +167,7 @@ CACHES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.163.com'
-EMAIL_PORT = 465
+EMAIL_PORT = 25
 EMAIL_HOST_USER = 'goodpersonblog@163.com'
 EMAIL_HOST_PASSWORD = 'goodperson123'
 EMAIL_FROM = 'Good-Person <goodpersonblog@163.com>'

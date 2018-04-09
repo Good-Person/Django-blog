@@ -19,8 +19,11 @@ class Index(View):
 
 
 class  Article(View):
-    def get(self, request, aid):
+    def get(self, request):
         title = '辉哥哥的文章'
+        aid = request.GET.get('aid')
+        if not aid:
+            return redirect('/')
         article = Articles.objects.filter(pk=aid).first()
         if article.is_delete:
             return redirect('/')

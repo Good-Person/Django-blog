@@ -14,7 +14,7 @@
         <div class="article-box clearfix">
             {% for result in page.object_list %}
             <div class="article col-md-8 col-sm-12 col-xs-12">
-                <div class="atitle"><a href="{% url 'blog:article' result.object.id %}">{% highlight result.object.title with query %}</a></div>
+                <div class="atitle"><a href="{% url 'blog:article'%}?aid={{ result.object.id }}">{% highlight result.object.title with query %}</a></div>
                 <div class="ainfo clearfix">
                     <ul>
                         <li class="fl"><span class="fa fa-user"></span>&nbsp;{{ result.object.user }}&nbsp;&nbsp;</li>
@@ -32,7 +32,7 @@
             </div>
             <div class="picture col-md-4 hidden-sm hidden-xs">
                 <div>
-                    <img src="{{ result.object.img_link  }}" alt="配图" class="img-responsive center-block">
+                    <a href="{% url 'blog:article'%}?aid={{ result.object.id }}"><img src="{{ result.object.img_link  }}" alt="配图" class="img-responsive center-block"></a>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">

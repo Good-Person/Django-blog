@@ -36,14 +36,14 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">个人信息</a></li>
-                            <li><a href="{% url 'usercenter:logout' %}?next={{ request.path }}">退出</a></li>
+                            <li><a href="{% url 'usercenter:logout' %}?next={{ request.get_full_path }}">退出</a></li>
                         </ul>
                     </li>
                 </ul>
                 {% else %}
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{% url 'usercenter:login' %}?next={{ request.path }}">登录</a></li>
-                    <li><a href="{% url 'usercenter:register' %}?next={{ request.path }}">注册</a></li>
+                    <li><a href="{% url 'usercenter:login' %}?next={{ request.get_full_path }}">登录</a></li>
+                    <li><a href="{% url 'usercenter:register' %}?next={{ request.get_full_path }}">注册</a></li>
                 </ul>
                 {% endif %}
                 <form class="navbar-form navbar-right" action="/search/" method="get" target="_blank">
