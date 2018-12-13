@@ -1,0 +1,31 @@
+.ding-content{
+  margin: 10px;
+  position: relative;
+}
+
+.ding-content h4{
+  height: 50px;
+  line-height: 50px;
+  text-indent: 10px;
+  background-color: #222;
+  color: #ffffff;
+}
+
+
+.more-input{
+  margin: 5px 0;
+}
+
+.ding-btn{
+  position: absolute;
+  bottom: -35px;
+  right: 15px;
+}
+
+.padding-to-0{
+  padding: 0;
+}
+
+.ding-form{
+  margin: 10px auto;
+}

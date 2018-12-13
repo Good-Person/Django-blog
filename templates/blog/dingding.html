@@ -1,0 +1,153 @@
+{% load static %}
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>海乐园</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/dingding.css">
+    <style>
+        span{
+            border:1px solid #000000;
+            border-radius: 2px;
+            margin:2px;
+            padding: 0 2px;
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    {% if agent %}
+    <script type="text/javascript" src="https://g.alicdn.com/dingding/open-develop/1.9.0/dingtalk.js"></script>
+    {% else %}
+    <script type="text/javascript" src="https://g.alicdn.com/dingding/dingtalk-pc-api/2.7.0/index.js"></script>
+    {% endif %}
+    <!--<script type="text/javascript" src="/static/js/dingding.js"></script>-->
+</head>
+<body>
+<div id="header" class="navbar navbar-inverse navbar-static-top header">
+    <div class="container header-menu clearfix">
+        <div class="navbar-header">
+             <button class="navbar-toggle" data-toggle="collapse" data-target="#togglemenu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+             </button>
+
+            <a href="#" class="navbar-brand logo">海乐园</a>
+        </div>
+        <div class="collapse navbar-collapse" id="togglemenu">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页</a></li>
+                </ul>
+        </div>
+    </div>
+</div>
+<div class="container ding-content">
+
+    <div id="user_id" style="display: none"></div>
+    <div class="col-md-12 col-sm-12 col-xs-12 margin-to-0 padding-to-0"><h4>财务数据收集系统</h4></div>
+    <div class="col-md-12 col-sm-12 col-xs-12 margin-to-0 padding-to-0">
+        {% for item in data %}
+            <span>{{ item }}</span>
+        {% endfor %}
+    </div>
+
+    <form action="#" class="ding-form">
+      <div>
+        <div class="col-md-4 col-sm-4 col-xs-4  padding-to-0">
+          <select class="form-control">
+              {% for item in data %}
+              <option value="{{ item }}">{{ item }}</option>
+              {% endfor %}
+          </select>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8 padding-to-0">
+          <input type="text" class="form-control">
+        </div>
+      </div>
+
+      <span class="btn btn-default fr more-input">+</span>
+      <button type="button" class="btn btn-primary ding-btn">提交数据</button>
+
+    </form>
+
+</div>
+
+{% if agent %}
+
+<script>
+     dd.ready(function () {
+        dd.runtime.permission.requestAuthCode({
+            corpId: "dingee782ddde4ad479035c2f4657eb6378f",
+            onSuccess: function(result) {
+
+                $.ajax({
+                    type:'get',
+                    url:"/blog/dinguser/",
+                    data:{'code':result.code},
+                    dataType:'json',
+                    success:function(data){
+                        $('#user_id').append(data.ding_user_id);
+                    }
+                });
+            },
+            onFail : function(err) {
+                alert('dd error: ' + JSON.stringify(err))
+            }
+        });
+    });
+</script>
+{% else %}
+<script>
+    $('#header').hide();
+    $('.container').hide();
+    $('body').append('<h1>请用手机登录填写数据</h1>')
+
+</script>
+{% endif %}
+
+<script>
+    var $dom = $('.ding-form>div');
+    var dom = $dom.html();
+    $('.more-input').click(function(){
+        $dom.append(dom)
+    });
+
+     $('.ding-btn').click(function(){
+      var user_id = $("#user_id").html();
+      var $selected = $("select option:selected");
+      var $text = $(":text");
+      var title = new Array();
+      var ainfo = new Array();
+      $selected.each(function(){
+        title.push($(this).val());
+      });
+      $text.each(function(){
+        ainfo.push($(this).val());
+      });
+
+      title = JSON.stringify(title);
+      ainfo = JSON.stringify(ainfo);
+
+      $.ajax({
+        type:'get',
+        url:"/tool/addcaiwu/",
+        data:{user_id:user_id,title:title,ainfo:ainfo},
+        dataType:'json',
+        success:function(data){
+            alert('数据提交成功');
+            window.location.reload()
+        }
+      });
+
+
+
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>测试</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://g.alicdn.com/dingding/open-develop/1.9.0/dingtalk.js"></script>
+</head>
+<body>
+    <div>hello</div>
+    <div id="110"></div>
+    <form action="{% url 'blog:dingding' %}">
+        <select name="">
+
+        </select>
+
+
+    </form>
+    <script>
+//        dd.config({
+//                    agentId : '170790877',
+//                    corpId : 'dingee782ddde4ad479035c2f4657eb6378f',
+//                    timeStamp : 'timeStamp',
+//                    nonceStr : 'uuid',
+//                    signature : 'signature',
+//                    jsApiList : [ 'runtime.info', 'biz.contact.choose' ]
+//
+//                });
+//        dd.error(function(error){
+//               /**
+//                {
+//                   message:"错误信息",//message信息会展示出钉钉服务端生成签名使用的参数，请和您生成签名的参数作对比，找出错误的参数
+//                   errorCode:"错误码"
+//                }
+//               **/
+//               alert('dd error: ' + JSON.stringify(err));
+//        });
+//        alert('ok');
+//        dd.runtime.permission.requestAuthCode({
+//            corpId: "dingee782ddde4ad479035c2f4657eb6378f",
+//            onSuccess: function(result) {
+//
+//                alert(result)
+////                $.ajax({
+////                    type:'get',
+////                    url:"/comment/get_reply/",
+////                    data:{'aid':aid},
+////                    dataType:'json',
+////                    success:function(data){
+////                        $.each(data.reply, function (i, item) {
+////                            pid = '#'+item.pid;
+////                            content = item.html;
+////                            $(pid).append(content);
+////
+////                        });
+////                    }
+////                });
+//
+//            /*{
+//                code: 'hYLK98jkf0m' //string authCode
+//            }*/
+//            },
+//            onFail : function(err) {
+//                alert('dd error: ' + JSON.stringify(err))
+//            }
+//
+//        });
+    </script>
+    <script type="text/javascript" src="/static/js/dingding.js"></script>
+
+</body>
+
+</html>
