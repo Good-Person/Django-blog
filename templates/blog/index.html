@@ -3,6 +3,10 @@
 {% load humanize %}
 {% load blog_tags %}
 {% load cache %}
+{% block js %}
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}
 {% block content %}
 <div id="header-image" class="header-image">
     <div id="header-content" class="header-content">
@@ -23,7 +27,7 @@
                 <div class="ainfo clearfix">
                     <ul>
                         <li class="fl"><span class="fa fa-user"></span>&nbsp;{{ article.user }}&nbsp;&nbsp;</li>
-                        <li class="fl"><span class="fa fa-calendar"></span>&nbsp;{{ article.create_date|naturaltime }}&nbsp;&nbsp;</li>
+                        <li class="fl"><span class="fa fa-calendar"></span>&nbsp;{{ article.create_date|date:"Y-m-d" }}&nbsp;&nbsp;</li>
                     </ul>
                 </div>
                 <div class="acontent">{{ article.summary|safe }}</div>
@@ -45,9 +49,19 @@
             </div>
             {% endfor %}
         </div>
+        {% include 'blog/more-article.html' %}
     </div>
     {% cache 3600 index %}
 {% get_left_column %}
     {% endcache %}
 </div>
 {% endblock %}
+
+
+
+
+
+<div class="article col-md-8 col-sm-12 col-xs-12"><div class="atitle"><a href="{aurl}">{atitle}</a></div><div class="ainfo clearfix"><ul><li class="fl"><span class="fa fa-user"></span>&nbsp;{user}&nbsp;&nbsp;</li><li class="fl"><span class="fa fa-calendar"></span>&nbsp;{create_date}&nbsp;&nbsp;</li></ul></div><div class="acontent">{summary}</div><div class="afooter"><ul><li class="fl"><span class="fa fa-list-ul"></span>&nbsp;{category}&nbsp;&nbsp;</li><li class="fl"><span class="fa fa-eye"></span>&nbsp;{views}&nbsp;&nbsp;</li><li class="fl"><span class="fa fa-comments"></span>&nbsp;{comment_number}&nbsp;&nbsp;</li></ul></div></div><div class="picture col-md-4 hidden-sm hidden-xs"><div><a href="{aurl}"><img src="{img_link}" alt="配图" class="img-responsive center-block"></a></div></div><div class="col-md-12 col-sm-12 col-xs-12"><hr></div>
+
+
+

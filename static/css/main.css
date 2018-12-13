@@ -380,3 +380,51 @@ body{
     top:70px;
     z-index: 1;
 }
+
+
+.more-article{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.more-article a{
+    width: 100%;
+    height: 35px;
+    color: #9d9d9d;
+    display: inline-block;
+    position: relative;
+    background-color: #222222;
+    border-radius: 5px;
+    line-height: 35px;
+    text-decoration: none;
+}
+
+.more-article a:hover{
+    color: #ffffff;
+}
+
+.more-article a:active{
+    top: 2px;
+}
+
+.center-to-head{
+        position:relative;
+    }
+
+.center-to-head::after{
+    content:'';
+    display:block;
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom:-10px;
+    background:#000;
+    transition:all ease 300ms;
+    transform: scale3d(0,1,1);
+    transform-origin:50% 0;
+}
+.center-to-head:hover::after{
+    transform:scale3d(1,1,1);
+}
+
+
